@@ -155,7 +155,6 @@ module.exports = function (app) {
     }else{
       const date=new Date();
       let threadToAddReply=boardData.threads.id(thread_id);
-      console.log(JSON.stringify(threadToAddReply))
       threadToAddReply.bumped_on=date;
       threadToAddReply.replies.push(newReply);
       boardData.save((err, updatedData)=>{
@@ -199,8 +198,6 @@ module.exports = function (app) {
             // delete_password,
           };
         });
-        thread
-
         res.json(thread1);
       }
     });
